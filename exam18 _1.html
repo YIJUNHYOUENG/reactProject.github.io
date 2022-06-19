@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선언적 함수</title>
+<script>
+	function kindShape(){
+		document.write("**도형의 넓이**<br>");
+	} 
+	function circleSize(r){
+		document.write("원의 넓이 = " + (r*r*3.14) +"<br>");
+	}
+	function getSquareSize(bottom, height){
+	   return bottom * height;      
+	}
+	function printData(p1,p2,p3){
+	   alert(p1);
+	   document.write(p2);
+	   console.log(p3);
+	}
+	// kindShape();
+	// circleSize(10);
+	// document.write("사각형의 넓이 = " + getSquareSize(4,5) + "<br>");
+	// printData();
+	function printAll() {
+		document.write("<h1>" + arguments.length + "</h1>");
+		for(var i=0;i < arguments.length ; i++) 
+			console.log(arguments[i]);
+		console.log("-------------------");
+	}
+	printAll();
+	printAll(1,2,3);
+	printAll(100, "abc", true, 3.14);
+	function hof(p) {
+		if (typeof p == 'function') {
+			p('ㅋㅋㅋ');
+		} else {
+			console.log(p);
+		}
+	}
+	hof(100);
+	hof('가나다');
+	hof([10,20,30]);
+	function myF(msg) {
+		document.write("<h2>" + msg + "</h2>");
+		return true;
+	}
+	hof(myF);
+	hof(function(msg) {
+		document.write("<hr>익명함수 전달 : "+msg);
+	});
+	// hof(myF());
+	var ary = [4, 20, 7, 15, 30];
+	document.write("<h2>"+ary+"</h2>");
+	document.write("<h2>"+ary.sort()+"</h2>");
+	document.write("<h2>"+ary.sort(function(a,b) {return a-b;})+"</h2>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
